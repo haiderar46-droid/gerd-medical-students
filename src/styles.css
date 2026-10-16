@@ -1,0 +1,139 @@
+@import "tailwindcss" source("../");
+
+:root {
+  --ink: #12262b;
+  --ink-soft: #3f5459;
+  --ink-faint: #7d8d90;
+  --paper: #f5f1ea;
+  --paper-deep: #ede7dc;
+  --line: #e2dbcf;
+  --line-strong: #cfc6b6;
+  --teal: #0f6b66;
+  --teal-deep: #0a3d3e;
+  --teal-wash: #dcebe7;
+  --amber: #e2a24a;
+  --amber-wash: #fbf1e1;
+  --danger: #b4372b;
+  --danger-wash: #fbecea;
+}
+
+body {
+  @apply m-0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.masthead {
+  background:
+    radial-gradient(1200px 400px at 85% -10%, rgba(226, 162, 74, 0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 120%, rgba(15, 107, 102, 0.55), transparent 60%),
+    var(--teal-deep);
+}
+
+.paper-card {
+  background: #fffdf9;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(18, 38, 43, 0.04), 0 12px 32px -12px rgba(18, 38, 43, 0.12);
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.75rem 0.95rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+}
+.choice:hover {
+  border-color: var(--teal);
+}
+.choice:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px var(--teal-wash);
+  border-color: var(--teal);
+}
+.choice-checked {
+  border-color: var(--teal);
+  background: var(--teal-wash);
+  color: var(--ink);
+  font-weight: 500;
+}
+.choice-mark {
+  display: flex;
+  height: 1.15rem;
+  width: 1.15rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--line-strong);
+  background: #fff;
+  color: #fff;
+}
+.choice-checked .choice-mark {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 8px;
+  padding: 0.75rem 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+.btn-primary {
+  background: var(--teal);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--teal-deep);
+}
+.btn-ghost {
+  color: var(--ink-soft);
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--paper);
+  color: var(--ink);
+}
+.btn-primary:disabled,
+.btn-ghost:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
